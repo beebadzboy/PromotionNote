@@ -1,741 +1,749 @@
 ﻿<div class="row mb-3 mt-3">
-    <div class="col-6 col-sm-4 themed-grid-col mb-3" v-for="(item,index) in items" :key="item.sort_no">
-        <div class="card">
-            <!-- <img class="card-img-top" :src="item.pic_pro" alt=''> -->
-            <div class="card-body">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="180"
-                     xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"
-                     role="img" aria-label="Placeholder: Image cap">
-                    <title>Placeholder</title>
-                    <rect width="100%" height="100%" fill="#868e96"></rect>
-                    <text x="50%" y="50%" fill="#dee2e6"
-                          dy=".3em">Image cap</text>
-                </svg>
-                <a href="./Show/Detail"><button type="button" class="btn btn-primary mt-2">Detail</button></a>
-            </div>
+    <div class="offset-9 col-3 input-group">
+        <label class="sr-only" for="inlineFormInputGroupSearch"></label>
+        <div class="input-group mb-2 mr-sm-2">
+            <input type="text" class="form-control" id="inlineFormInputGroupSearch" placeholder="Search">
         </div>
     </div>
 </div>
+    <div class="row mb-3 mt-3">
+        <div class="col-6 col-sm-4 themed-grid-col mb-3" v-for="(item,index) in items" :key="item.sort_no">
+            <div class="card">
+                <!-- <img class="card-img-top" :src="item.pic_pro" alt=''> -->
+                <div class="card-body">
+                    <svg class="bd-placeholder-img card-img-top" width="100%" height="180"
+                         xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"
+                         role="img" aria-label="Placeholder: Image cap">
+                        <title>Placeholder</title>
+                        <rect width="100%" height="100%" fill="#868e96"></rect>
+                        <text x="50%" y="50%" fill="#dee2e6"
+                              dy=".3em">Image cap</text>
+                    </svg>
+                    <a href="./Show/Detail"><button type="button" class="btn-sm btn-primary mt-2">Detail</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
 
-@section scripts{
-    <script>
-        var app = new Vue({
-            el: '#app',
-            data:
-            {
-                listMenu: [],
-                items:
-                    [{
-                        'sort_no': 1,
-                        'img': './img/logo-brand/logo1.jpg',
-                        'pic_pro': './img/promotion-for-brand/01-promo-han-ta-dindang-20200903.jpg',
-                        'branch': {
-                            'lang_th': 'ห่านท่าดินแดง',
+    @section scripts{
+        <script>
+            var app = new Vue({
+                el: '#app',
+                data:
+                {
+                    listMenu: [],
+                    items:
+                        [{
+                            'sort_no': 1,
+                            'img': './img/logo-brand/logo1.jpg',
+                            'pic_pro': './img/promotion-for-brand/01-promo-han-ta-dindang-20200903.jpg',
+                            'branch': {
+                                'lang_th': 'ห่านท่าดินแดง',
+                            },
+                            dataPro:
+                                [{
+                                    'sort_no': 1,
+                                    'no': 1,
+                                    'detail': {
+                                        '01': '',
+                                    },
+                                    'pic': './img/promotion-for-brand/01-promo-han-ta-dindang-20200903.jpg'
+                                }, {
+                                    'sort_no': 1,
+                                    'no': 1,
+                                    'detail': {
+                                        '01': '',
+                                    },
+                                    'pic': './img/promotion-for-brand/02-promo-han-ta-dindang-20200903.jpg'
+                                }]
+                        }, {
+                            'sort_no': 2,
+                            'img': './img/logo-brand/logo-thai-street-food.jpg',
+                            'pic_pro': './img/promotion-for-brand/02-promo-Thai-Street-Food-by-Asian-Corner.jpg',
+                            'branch': {
+                                'lang_th': 'Thai Street Food by Asian Corner',
+                            },
+                            dataPro:
+                                [{
+                                    'sort_no': 2,
+                                    'no': 1,
+                                    'detail': {
+                                        '01': ''
+                                    },
+                                    'pic': './img/promotion-for-brand/02-promo-Thai-Street-Food-by-Asian-Corner.jpg'
+                                }, {
+                                    'sort_no': 1,
+                                    'no': 1,
+                                    'detail': {
+                                        '01': '',
+                                    },
+                                    'pic': './img/promotion-for-brand/03-promo-Thai-Street-Food-by-Asian-Corner.jpg'
+                                }, {
+                                    'sort_no': 1,
+                                    'no': 1,
+                                    'detail': {
+                                        '01': '',
+                                    },
+                                    'pic': './img/promotion-for-brand/04-promo-Thai-Street-Food-by-Asian-Corner.jpg'
+                                }, {
+                                    'sort_no': 1,
+                                    'no': 1,
+                                    'detail': {
+                                        '01': '',
+                                    },
+                                    'pic': './img/promotion-for-brand/05-promo-Thai-Street-Food-by-Asian-Corner.jpg'
+                                }]
+                        }, {
+                            'sort_no': 3,
+                            'img': './img/logo-brand/logo3.jpg',
+                            'pic_pro': './img/promotion-for-brand/03-thai-king-river-prawns-20200903.jpg',
+                            'branch': {
+                                'lang_th': 'กุ้งเผาอยุธยา',
+                            },
+                            dataPro:
+                                [{
+                                    'sort_no': 3,
+                                    'no': 1,
+                                    'detail': {
+                                        '01': '',
+                                    },
+                                    'pic': './img/promotion-for-brand/03-thai-king-river-prawns-20200903.jpg'
+                                }, {
+                                    'sort_no': 1,
+                                    'no': 1,
+                                    'detail': {
+                                        '01': '',
+                                    },
+                                    'pic': './img/promotion-for-brand/04-thai-king-river-prawns-20200903.jpg'
+                                }, {
+                                    'sort_no': 1,
+                                    'no': 1,
+                                    'detail': {
+                                        '01': '',
+                                    },
+                                    'pic': './img/promotion-for-brand/05-thai-king-river-prawns-20200903.jpg'
+                                }]
+                        }, {
+                            'sort_no': 4,
+                            'img': './img/logo-brand/logo4.jpg',
+                            'pic_pro': './img/promotion-for-brand/04-chula-samyan-pork-leg-rice-20200903.jpg',
+                            'branch': {
+                                'lang_th': 'ข้าวขาหมูจุฬา สามย่าน',
+                            },
+                            dataPro:
+                                [{
+                                    'sort_no': 4,
+                                    'no': 2,
+                                    'detail': {
+                                        '01': '',
+                                    },
+                                    'pic': './img/promotion-for-brand/04-chula-samyan-pork-leg-rice-20200903.jpg'
+                                }]
+                        }, {
+                            'sort_no': 5,
+                            'img': './img/logo-brand/logo5.jpg',
+                            'pic_pro': './img/promotion-for-brand/05-mr-uan-20200903.jpg',
+                            'branch': {
+                                'lang_th': 'นายอ้วนเย็นตาโฟ',
+                            },
+                            dataPro:
+                                [{
+                                    'sort_no': 5,
+                                    'no': 1,
+                                    'detail': {
+                                        '01': '',
+                                    },
+                                    'pic': './img/promotion-for-brand/05-mr-uan-20200903.jpg'
+                                }]
+                        }, {
+                            'sort_no': 6,
+                            'img': './img/logo-brand/logo6.jpg',
+                            'pic_pro': './img/promotion-for-brand/06-kuayjap-hongta-20200903.jpg',
+                            'branch': {
+                                'lang_th': 'ก๋วยจั๊บฮ่องเต้',
+                            },
+                            dataPro:
+                                [{
+                                    'sort_no': 6,
+                                    'no': 1,
+                                    'detail': {
+                                        '01': '',
+                                    },
+                                    'pic': './img/promotion-for-brand/06-kuayjap-hongta-20200903.jpg'
+                                }, {
+                                    'sort_no': 1,
+                                    'no': 1,
+                                    'detail': {
+                                        '01': '',
+                                    },
+                                    'pic': './img/promotion-for-brand/07-kuayjap-hongta-20200903.jpg'
+                                }]
+                        }, {
+                            'sort_no': 7,
+                            'img': './img/logo-brand/logo7.jpg',
+                            'pic_pro': './img/promotion-for-brand/07-long-muang-kuaw-luaw-20200903.jpg',
+                            'branch': {
+                                'lang_th': 'รองเมืองเกาเหลา',
+                            },
+                            dataPro:
+                                [{
+                                    'sort_no': 7,
+                                    'no': 1,
+                                    'detail': {
+                                        '01': '',
+                                    },
+                                    'pic': './img/promotion-for-brand/07-long-muang-kuaw-luaw-20200903.jpg'
+                                }, {
+                                    'sort_no': 1,
+                                    'no': 1,
+                                    'detail': {
+                                        '01': '',
+                                    },
+                                    'pic': './img/promotion-for-brand/08-long-muang-kuaw-luaw-20200903.jpg'
+                                }]
+                        }, {
+                            'sort_no': 8,
+                            'img': './img/logo-brand/logo-thipsamai.jpg',
+                            'pic_pro': './img/promotion-for-brand/08-thipsamai.jpg',
+                            'branch': {
+                                'lang_th': 'ทิพย์สมัย ผัดไทยประตูผี',
+                            },
+                            dataPro:
+                                [{
+                                    'sort_no': 8,
+                                    'no': 1,
+                                    'detail': {
+                                        '01': '',
+                                    },
+                                    'pic': './img/promotion-for-brand/08-thipsamai.jpg'
+                                }]
+                        }, {
+                            'sort_no': 9,
+                            'img': './img/logo-brand/logo9.jpg',
+                            'pic_pro': './img/promotion-for-brand/03Karim Roti-Mataba.jpg',
+                            'branch': {
+                                'lang_th': 'การิม โรตี มะตะบะ',
+                            },
+                            dataPro:
+                                [{
+                                    'sort_no': 9,
+                                    'no': 1,
+                                    'detail': {
+                                        '01': '',
+                                    },
+                                    'pic': './img/promotion-for-brand/02Karim Roti-Mataba.jpg'
+                                }, {
+                                    'sort_no': 1,
+                                    'no': 1,
+                                    'detail': {
+                                        '01': '',
+                                    },
+                                    'pic': './img/promotion-for-brand/03Karim Roti-Mataba.jpg'
+                                }]
+                        }, {
+                            'sort_no': 10,
+                            'img': './img/logo-brand/logo11.jpg',
+                            'pic_pro': './img/promotion-for-brand/08-change-kar-ree-la-20200903.jpg',
+                            'branch': {
+                                'lang_th': 'เชียงการีลา',
+                            },
+                            dataPro:
+                                [{
+                                    'sort_no': 10,
+                                    'no': 1,
+                                    'detail': {
+                                        '01': '',
+                                    },
+                                    'pic': './img/promotion-for-brand/08-change-kar-ree-la-20200903.jpg'
+                                }, {
+                                    'sort_no': 1,
+                                    'no': 1,
+                                    'detail': {
+                                        '01': '',
+                                    },
+                                    'pic': './img/promotion-for-brand/09-change-kar-ree-la-20200903.jpg'
+                                }]
+                        }, {
+                            'sort_no': 11,
+                            'img': './img/logo-brand/logolamoon.jpg',
+                            'pic_pro': './img/promotion-for-brand/11La moon.jpg',
+                            'branch': {
+                                'lang_th': 'ลามูน',
+                            },
+                            dataPro:
+                                [{
+                                    'sort_no': 10,
+                                    'no': 1,
+                                    'detail': {
+                                        '01': '',
+                                    },
+                                    'pic': './img/promotion-for-brand/11La moon.jpg'
+                                }, {
+                                    'sort_no': 1,
+                                    'no': 1,
+                                    'detail': {
+                                        '01': '',
+                                    },
+                                    'pic': './img/promotion-for-brand/12La moon.jpg'
+                                }, {
+                                    'sort_no': 1,
+                                    'no': 1,
+                                    'detail': {
+                                        '01': '',
+                                    },
+                                    'pic': './img/promotion-for-brand/13La moon.jpg'
+                                }]
+                        }, {
+                            'sort_no': 12,
+                            'img': './img/logo-brand/logo-yanwo-haochi.jpg',
+                            'pic_pro': './img/promotion-for-brand/12-eang-hoa-haw-cheer-20200903.jpg',
+                            'branch': {
+                                'lang_th': 'เอี๊ยงออเฮ่าชือ',
+                            },
+                            dataPro:
+                                [{
+                                    'sort_no': 12,
+                                    'no': 1,
+                                    'detail': {
+                                        '01': '',
+                                    },
+                                    'pic': './img/promotion-for-brand/12-eang-hoa-haw-cheer-20200903.jpg'
+                                }, {
+                                    'sort_no': 1,
+                                    'no': 1,
+                                    'detail': {
+                                        '01': '',
+                                    },
+                                    'pic': './img/promotion-for-brand/13-eang-hoa-haw-cheer-20200903.jpg'
+                                }, {
+                                    'sort_no': 1,
+                                    'no': 1,
+                                    'detail': {
+                                        '01': '',
+                                    },
+                                    'pic': './img/promotion-for-brand/14-eang-hoa-haw-cheer-20200903.jpg'
+                                }]
+                        }, {
+                            'sort_no': 13,
+                            'img': './img/logo-brand/logohotfried.jpg',
+                            'pic_pro': './img/promotion-for-brand/13HOTFRIEDbytheEmerald1992.jpg',
+                            'branch': {
+                                'lang_th': 'ฮอทฟรายด์ บาย ดิเอมเมอรัลด์ 1992',
+                            },
+                            dataPro:
+                                [{
+                                    'sort_no': 13,
+                                    'no': 1,
+                                    'detail': {
+                                        '01': '',
+                                    },
+                                    'pic': './img/promotion-for-brand/13HOTFRIEDbytheEmerald1992.jpg'
+                                }]
+                        }, {
+                            'sort_no': 14,
+                            'img': './img/logo-brand/logo14.jpg',
+                            'pic_pro': './img/promotion-for-brand/11-All-Coco-20200903.jpg',
+                            'branch': {
+                                'lang_th': 'All COCO',
+                            },
+                            dataPro:
+                                [{
+                                    'sort_no': 14,
+                                    'no': 1,
+                                    'detail': {
+                                        '02': '',
+                                    },
+                                    'pic': './img/promotion-for-brand/11-All-Coco-20200903.jpg'
+                                }, {
+                                    'sort_no': 1,
+                                    'no': 1,
+                                    'detail': {
+                                        '01': '',
+                                    },
+                                    'pic': './img/promotion-for-brand/12-All-Coco-20200903.jpg'
+                                }]
+                        }, {
+                            'sort_no': 15,
+                            'img': './img/logo-brand/logoMr. Pramuan Misin Kanom Krok.jpg',
+                            'pic_pro': './img/promotion-for-brand/15Mr.Pramuan Misin Kanom Krok.jpg',
+                            'branch': {
+                                'lang_th': 'ขนมครกประมวล มีศิลป์',
+                            },
+                            dataPro:
+                                [{
+                                    'sort_no': 15,
+                                    'no': 1,
+                                    'detail': {
+                                        '01': '',
+                                    },
+                                    'pic': './img/promotion-for-brand/15Mr.Pramuan Misin Kanom Krok.jpg'
+                                }]
+                        }, {
+                            'sort_no': 16,
+                            'img': './img/logo-brand/logo16.jpg',
+                            'pic_pro': './img/promotion-for-brand/16-lamai-hoi-tod-yaowarat-20200903.jpg',
+                            'branch': {
+                                'lang_th': 'ละมัย หอยทอดเยาวราช',
+                            },
+                            dataPro:
+                                [{
+                                    'sort_no': 16,
+                                    'no': 1,
+                                    'detail': {
+                                        '01': '',
+                                    },
+                                    'pic': './img/promotion-for-brand/16-lamai-hoi-tod-yaowarat-20200903.jpg'
+                                }, {
+                                    'sort_no': 1,
+                                    'no': 1,
+                                    'detail': {
+                                        '01': '',
+                                    },
+                                    'pic': './img/promotion-for-brand/17-lamai-hoi-tod-yaowarat-20200903.jpg'
+                                }]
+                        }, {
+                            'sort_no': 17,
+                            'img': './img/logo-brand/logoqueen.jpg',
+                            'pic_pro': './img/promotion-for-brand/17QUEENOFKAPROW.jpg',
+                            'branch': {
+                                'lang_th': 'กะเพราหม่อมแม่',
+                            },
+                            dataPro:
+                                [{
+                                    'sort_no': 17,
+                                    'no': 1,
+                                    'detail': {
+                                        '01': '',
+                                    },
+                                    'pic': './img/promotion-for-brand/17QUEENOFKAPROW.jpg'
+                                }, {
+                                    'sort_no': 1,
+                                    'no': 1,
+                                    'detail': {
+                                        '01': '',
+                                    },
+                                    'pic': './img/promotion-for-brand/18QUEENOFKAPROW.jpg'
+                                }, {
+                                    'sort_no': 1,
+                                    'no': 1,
+                                    'detail': {
+                                        '01': '',
+                                    },
+                                    'pic': './img/promotion-for-brand/19QUEENOFKAPROW.jpg'
+                                }, {
+                                    'sort_no': 1,
+                                    'no': 1,
+                                    'detail': {
+                                        '01': '',
+                                    },
+                                    'pic': './img/promotion-for-brand/20QUEENOFKAPROW.jpg'
+                                }]
+                        }, {
+                            'sort_no': 18,
+                            'img': './img/logo-brand/logo18.jpg',
+                            'pic_pro': './img/promotion-for-brand/18-jec-meng-chicken-rice-two-color-20200903.jpg',
+                            'branch': {
+                                'lang_th': 'เจ็กเม้งข้าวมันไก่สองสี',
+                            },
+                            dataPro:
+                                [{
+                                    'sort_no': 18,
+                                    'no': 1,
+                                    'detail': {
+                                        '01': '',
+                                    },
+                                    'pic': './img/promotion-for-brand/18-jec-meng-chicken-rice-two-color-20200903.jpg'
+                                }]
+                        }, {
+                            'sort_no': 19,
+                            'img': './img/logo-brand/logo19.jpg',
+                            'pic_pro': './img/promotion-for-brand/19-sawang-noodle-shop-20200903.jpg',
+                            'branch': {
+                                'lang_th': 'สว่างบะหมี่ก้ามปู',
+                            },
+                            dataPro:
+                                [{
+                                    'sort_no': 19,
+                                    'no': 1,
+                                    'detail': {
+                                        '01': '',
+                                    },
+                                    'pic': './img/promotion-for-brand/19-sawang-noodle-shop-20200903.jpg'
+                                }]
+                        }, {
+                            'sort_no': 20,
+                            'img': './img/logo-brand/logo20.jpg',
+                            'pic_pro': './img/promotion-for-brand/20-threerachai-kai-yang-20200903.jpg',
+                            'branch': {
+                                'lang_th': 'ธีรชัยไก่ย่าง',
+                            },
+                            dataPro:
+                                [{
+                                    'sort_no': 20,
+                                    'no': 1,
+                                    'detail': {
+                                        '01': '',
+                                    },
+                                    'pic': './img/promotion-for-brand/20-threerachai-kai-yang-20200903.jpg'
+                                }]
+                        }, {
+                            'sort_no': 21,
+                            'img': './img/logo-brand/logo21.jpg',
+                            'pic_pro': './img/promotion-for-brand/21KanomBuengMaePrapa.jpg',
+                            'branch': {
+                                'lang_th': 'ขนมเบื้องแม่ประภา',
+                            },
+                            dataPro:
+                                [{
+                                    'sort_no': 21,
+                                    'no': 1,
+                                    'detail': {
+                                        '01': ''
+                                    },
+                                    'pic': './img/promotion-for-brand/21KanomBuengMaePrapa.jpg'
+                                }]
+                        }, {
+                            'sort_no': 22,
+                            'img': './img/logo-brand/logo22.jpg',
+                            'pic_pro': './img/promotion-for-brand/22YAOWARATTASTYTOASTEDBUN.jpg',
+                            'branch': {
+                                'lang_th': 'ขนมปังเจ้าอร่อยเด็ดเยาวราช',
+                            },
+                            dataPro:
+                                [{
+                                    'sort_no': 23,
+                                    'no': 23,
+                                    'detail': {
+                                        '01': '',
+                                    },
+                                    'pic': './img/promotion-for-brand/22YAOWARATTASTYTOASTEDBUN.jpg'
+                                }]
+                        }, {
+                            'sort_no': 23,
+                            'img': './img/logo-brand/logotokyobean.jpg',
+                            'pic_pro': './img/promotion-for-brand/23TOKYOBEAN.jpg',
+                            'branch': {
+                                'lang_th': 'โตเกียว บีน',
+                            },
+                            dataPro:
+                                [{
+                                    'sort_no': 23,
+                                    'no': 1,
+                                    'detail': {
+                                        '01': ''
+                                    },
+                                    'pic': './img/promotion-for-brand/23TOKYOBEAN.jpg'
+                                }]
+                        }, {
+                            'sort_no': 24,
+                            'img': './img/logo-brand/logoyakun.jpg',
+                            'pic_pro': './img/promotion-for-brand/25YAKUNKAYATOAST.jpg',
+                            'branch': {
+                                'lang_th': 'ยาคุน คายา โทสต์',
+                            },
+                            dataPro:
+                                [{
+                                    'sort_no': 24,
+                                    'no': 1,
+                                    'detail': {
+                                        '01': ''
+                                    },
+                                    'pic': './img/promotion-for-brand/25YAKUNKAYATOAST.jpg'
+                                }]
+                        }, {
+                            'sort_no': 25,
+                            'img': './img/logo-brand/logoxiao.jpg',
+                            'pic_pro': './img/promotion-for-brand/25XiaoSiChuan.jpg',
+                            'branch': {
+                                'lang_th': 'เสี่ยวเสฉวน',
+                            },
+                            dataPro:
+                                [{
+                                    'sort_no': 25,
+                                    'no': 1,
+                                    'detail': {
+                                        '01': ''
+                                    },
+                                    'pic': './img/promotion-for-brand/25XiaoSiChuan.jpg'
+                                }]
+                        }, {
+                            'sort_no': 26,
+                            'img': './img/logo-brand/logo-kuychay-loa-hao-jeay-20200804-20.jpg',
+                            'pic_pro': './img/promotion-for-brand/26GuiChaibyJe Noi.jpg',
+                            'branch': {
+                                'lang_th': 'กุยช่ายเหล่าหอเจี๊ยะ by เจ้น้อย',
+                            },
+                            dataPro:
+                                [{
+                                    'sort_no': 26,
+                                    'no': 1,
+                                    'detail': {
+                                        '01': ''
+                                    },
+                                    'pic': './img/promotion-for-brand/26GuiChaibyJe Noi.jpg'
+                                }]
+                        }, {
+                            'sort_no': 27,
+                            'img': './img/logo-brand/logo-ayao-gourment-20.jpg',
+                            'pic_pro': './img/promotion-for-brand/29AYAO.jpg',
+                            'branch': {
+                                'lang_th': 'อาหยาว',
+                            },
+                            dataPro:
+                                [{
+                                    'sort_no': 27,
+                                    'no': 1,
+                                    'detail': {
+                                        '01': ''
+                                    },
+                                    'pic': './img/promotion-for-brand/29AYAO.jpg'
+                                }]
+                        }, {
+                            'sort_no': 28,
+                            'img': './img/logo-brand/logotidlom.jpg',
+                            'pic_pro': './img/promotion-for-brand/30TIDLOM MHOOTOD.jpg',
+                            'branch': {
+                                'lang_th': 'ติดลมหมูทอด ปลาร้า',
+                            },
+                            dataPro:
+                                [{
+                                    'sort_no': 28,
+                                    'no': 1,
+                                    'detail': {
+                                        '01': ''
+                                    },
+                                    'pic': './img/promotion-for-brand/30TIDLOM MHOOTOD.jpg'
+                                }]
+                        }, {
+                            'sort_no': 29,
+                            'img': './img/logo-brand/logogrilledsquid.jpg',
+                            'pic_pro': './img/promotion-for-brand/31GrilledSquidChinatownYaowarat.jpg',
+                            'branch': {
+                                'lang_th': 'หมึกย่างแดนมังกรเยาวราช',
+                            },
+                            dataPro:
+                                [{
+                                    'sort_no': 29,
+                                    'no': 1,
+                                    'detail': {
+                                        '01': ''
+                                    },
+                                    'pic': './img/promotion-for-brand/31GrilledSquidChinatownYaowarat.jpg'
+                                }]
+                        }, {
+                            'sort_no': 30,
+                            'img': './img/logo-brand/logo-Legend-Grilled-Pork-20200804-20.jpg',
+                            'pic_pro': './img/promotion-for-brand/32LegendGrilledPork.jpg',
+                            'branch': {
+                                'lang_th': 'รีเจ้นท์กริลพอร์ค',
+                            },
+                            dataPro:
+                                [{
+                                    'sort_no': 30,
+                                    'no': 1,
+                                    'detail': {
+                                        '01': ''
+                                    },
+                                    'pic': './img/promotion-for-brand/32LegendGrilledPork.jpg'
+                                }]
+                        }, {
+                            'sort_no': 31,
+                            'img': './img/logo-brand/a cup by ahnam.jpg',
+                            'pic_pro': './img/promotion-for-brand/31-a-cup-by-ahnam.jpg',
+                            'branch': {
+                                'lang_th': 'อะคัพ บาย อานัม',
+                            },
+                            dataPro:
+                                [{
+                                    'sort_no': 31,
+                                    'no': 1,
+                                    'detail': {
+                                        '01': ''
+                                    },
+                                    'pic': './img/promotion-for-brand/31-a-cup-by-ahnam.jpg'
+                                }, {
+                                    'sort_no': 1,
+                                    'no': 1,
+                                    'detail': {
+                                        '01': '',
+                                    },
+                                    'pic': './img/promotion-for-brand/32-a-cup-by-ahnam.jpg'
+                                }]
+                        }, {
+                            'sort_no': 32,
+                            'img': './img/logo-brand/logodrink.jpg',
+                            'pic_pro': './img/promotion-for-brand/32drink.jpg',
+                            'branch': {
+                                'lang_th': 'เครื่องดื่ม',
+                            },
+                            dataPro:
+                                [{
+                                    'sort_no': 32,
+                                    'no': 1,
+                                    'detail': {
+                                        '01': ''
+                                    },
+                                    'pic': './img/promotion-for-brand/32drink.jpg'
+                                }, {
+                                    'sort_no': 1,
+                                    'no': 1,
+                                    'detail': {
+                                        '01': '',
+                                    },
+                                    'pic': './img/promotion-for-brand/33drink.jpg'
+                                }, {
+                                    'sort_no': 1,
+                                    'no': 1,
+                                    'detail': {
+                                        '01': '',
+                                    },
+                                    'pic': './img/promotion-for-brand/34drink.jpg'
+                                }, {
+                                    'sort_no': 1,
+                                    'no': 1,
+                                    'detail': {
+                                        '01': '',
+                                    },
+                                    'pic': './img/promotion-for-brand/35drink.jpg'
+                                }, {
+                                    'sort_no': 1,
+                                    'no': 1,
+                                    'detail': {
+                                        '01': '',
+                                    },
+                                    'pic': './img/promotion-for-brand/36drink.jpg'
+                                }]
                         },
-                        dataPro:
-                            [{
-                                'sort_no': 1,
-                                'no': 1,
-                                'detail': {
-                                    '01': '',
-                                },
-                                'pic': './img/promotion-for-brand/01-promo-han-ta-dindang-20200903.jpg'
-                            }, {
-                                'sort_no': 1,
-                                'no': 1,
-                                'detail': {
-                                    '01': '',
-                                },
-                                'pic': './img/promotion-for-brand/02-promo-han-ta-dindang-20200903.jpg'
-                            }]
-                    }, {
-                        'sort_no': 2,
-                        'img': './img/logo-brand/logo-thai-street-food.jpg',
-                        'pic_pro': './img/promotion-for-brand/02-promo-Thai-Street-Food-by-Asian-Corner.jpg',
-                        'branch': {
-                            'lang_th': 'Thai Street Food by Asian Corner',
-                        },
-                        dataPro:
-                            [{
-                                'sort_no': 2,
-                                'no': 1,
-                                'detail': {
-                                    '01': ''
-                                },
-                                'pic': './img/promotion-for-brand/02-promo-Thai-Street-Food-by-Asian-Corner.jpg'
-                            }, {
-                                'sort_no': 1,
-                                'no': 1,
-                                'detail': {
-                                    '01': '',
-                                },
-                                'pic': './img/promotion-for-brand/03-promo-Thai-Street-Food-by-Asian-Corner.jpg'
-                            }, {
-                                'sort_no': 1,
-                                'no': 1,
-                                'detail': {
-                                    '01': '',
-                                },
-                                'pic': './img/promotion-for-brand/04-promo-Thai-Street-Food-by-Asian-Corner.jpg'
-                            }, {
-                                'sort_no': 1,
-                                'no': 1,
-                                'detail': {
-                                    '01': '',
-                                },
-                                'pic': './img/promotion-for-brand/05-promo-Thai-Street-Food-by-Asian-Corner.jpg'
-                            }]
-                    }, {
-                        'sort_no': 3,
-                        'img': './img/logo-brand/logo3.jpg',
-                        'pic_pro': './img/promotion-for-brand/03-thai-king-river-prawns-20200903.jpg',
-                        'branch': {
-                            'lang_th': 'กุ้งเผาอยุธยา',
-                        },
-                        dataPro:
-                            [{
-                                'sort_no': 3,
-                                'no': 1,
-                                'detail': {
-                                    '01': '',
-                                },
-                                'pic': './img/promotion-for-brand/03-thai-king-river-prawns-20200903.jpg'
-                            }, {
-                                'sort_no': 1,
-                                'no': 1,
-                                'detail': {
-                                    '01': '',
-                                },
-                                'pic': './img/promotion-for-brand/04-thai-king-river-prawns-20200903.jpg'
-                            }, {
-                                'sort_no': 1,
-                                'no': 1,
-                                'detail': {
-                                    '01': '',
-                                },
-                                'pic': './img/promotion-for-brand/05-thai-king-river-prawns-20200903.jpg'
-                            }]
-                    }, {
-                        'sort_no': 4,
-                        'img': './img/logo-brand/logo4.jpg',
-                        'pic_pro': './img/promotion-for-brand/04-chula-samyan-pork-leg-rice-20200903.jpg',
-                        'branch': {
-                            'lang_th': 'ข้าวขาหมูจุฬา สามย่าน',
-                        },
-                        dataPro:
-                            [{
-                                'sort_no': 4,
-                                'no': 2,
-                                'detail': {
-                                    '01': '',
-                                },
-                                'pic': './img/promotion-for-brand/04-chula-samyan-pork-leg-rice-20200903.jpg'
-                            }]
-                    }, {
-                        'sort_no': 5,
-                        'img': './img/logo-brand/logo5.jpg',
-                        'pic_pro': './img/promotion-for-brand/05-mr-uan-20200903.jpg',
-                        'branch': {
-                            'lang_th': 'นายอ้วนเย็นตาโฟ',
-                        },
-                        dataPro:
-                            [{
-                                'sort_no': 5,
-                                'no': 1,
-                                'detail': {
-                                    '01': '',
-                                },
-                                'pic': './img/promotion-for-brand/05-mr-uan-20200903.jpg'
-                            }]
-                    }, {
-                        'sort_no': 6,
-                        'img': './img/logo-brand/logo6.jpg',
-                        'pic_pro': './img/promotion-for-brand/06-kuayjap-hongta-20200903.jpg',
-                        'branch': {
-                            'lang_th': 'ก๋วยจั๊บฮ่องเต้',
-                        },
-                        dataPro:
-                            [{
-                                'sort_no': 6,
-                                'no': 1,
-                                'detail': {
-                                    '01': '',
-                                },
-                                'pic': './img/promotion-for-brand/06-kuayjap-hongta-20200903.jpg'
-                            }, {
-                                'sort_no': 1,
-                                'no': 1,
-                                'detail': {
-                                    '01': '',
-                                },
-                                'pic': './img/promotion-for-brand/07-kuayjap-hongta-20200903.jpg'
-                            }]
-                    }, {
-                        'sort_no': 7,
-                        'img': './img/logo-brand/logo7.jpg',
-                        'pic_pro': './img/promotion-for-brand/07-long-muang-kuaw-luaw-20200903.jpg',
-                        'branch': {
-                            'lang_th': 'รองเมืองเกาเหลา',
-                        },
-                        dataPro:
-                            [{
-                                'sort_no': 7,
-                                'no': 1,
-                                'detail': {
-                                    '01': '',
-                                },
-                                'pic': './img/promotion-for-brand/07-long-muang-kuaw-luaw-20200903.jpg'
-                            }, {
-                                'sort_no': 1,
-                                'no': 1,
-                                'detail': {
-                                    '01': '',
-                                },
-                                'pic': './img/promotion-for-brand/08-long-muang-kuaw-luaw-20200903.jpg'
-                            }]
-                    }, {
-                        'sort_no': 8,
-                        'img': './img/logo-brand/logo-thipsamai.jpg',
-                        'pic_pro': './img/promotion-for-brand/08-thipsamai.jpg',
-                        'branch': {
-                            'lang_th': 'ทิพย์สมัย ผัดไทยประตูผี',
-                        },
-                        dataPro:
-                            [{
-                                'sort_no': 8,
-                                'no': 1,
-                                'detail': {
-                                    '01': '',
-                                },
-                                'pic': './img/promotion-for-brand/08-thipsamai.jpg'
-                            }]
-                    }, {
-                        'sort_no': 9,
-                        'img': './img/logo-brand/logo9.jpg',
-                        'pic_pro': './img/promotion-for-brand/03Karim Roti-Mataba.jpg',
-                        'branch': {
-                            'lang_th': 'การิม โรตี มะตะบะ',
-                        },
-                        dataPro:
-                            [{
-                                'sort_no': 9,
-                                'no': 1,
-                                'detail': {
-                                    '01': '',
-                                },
-                                'pic': './img/promotion-for-brand/02Karim Roti-Mataba.jpg'
-                            }, {
-                                'sort_no': 1,
-                                'no': 1,
-                                'detail': {
-                                    '01': '',
-                                },
-                                'pic': './img/promotion-for-brand/03Karim Roti-Mataba.jpg'
-                            }]
-                    }, {
-                        'sort_no': 10,
-                        'img': './img/logo-brand/logo11.jpg',
-                        'pic_pro': './img/promotion-for-brand/08-change-kar-ree-la-20200903.jpg',
-                        'branch': {
-                            'lang_th': 'เชียงการีลา',
-                        },
-                        dataPro:
-                            [{
-                                'sort_no': 10,
-                                'no': 1,
-                                'detail': {
-                                    '01': '',
-                                },
-                                'pic': './img/promotion-for-brand/08-change-kar-ree-la-20200903.jpg'
-                            }, {
-                                'sort_no': 1,
-                                'no': 1,
-                                'detail': {
-                                    '01': '',
-                                },
-                                'pic': './img/promotion-for-brand/09-change-kar-ree-la-20200903.jpg'
-                            }]
-                    }, {
-                        'sort_no': 11,
-                        'img': './img/logo-brand/logolamoon.jpg',
-                        'pic_pro': './img/promotion-for-brand/11La moon.jpg',
-                        'branch': {
-                            'lang_th': 'ลามูน',
-                        },
-                        dataPro:
-                            [{
-                                'sort_no': 10,
-                                'no': 1,
-                                'detail': {
-                                    '01': '',
-                                },
-                                'pic': './img/promotion-for-brand/11La moon.jpg'
-                            }, {
-                                'sort_no': 1,
-                                'no': 1,
-                                'detail': {
-                                    '01': '',
-                                },
-                                'pic': './img/promotion-for-brand/12La moon.jpg'
-                            }, {
-                                'sort_no': 1,
-                                'no': 1,
-                                'detail': {
-                                    '01': '',
-                                },
-                                'pic': './img/promotion-for-brand/13La moon.jpg'
-                            }]
-                    }, {
-                        'sort_no': 12,
-                        'img': './img/logo-brand/logo-yanwo-haochi.jpg',
-                        'pic_pro': './img/promotion-for-brand/12-eang-hoa-haw-cheer-20200903.jpg',
-                        'branch': {
-                            'lang_th': 'เอี๊ยงออเฮ่าชือ',
-                        },
-                        dataPro:
-                            [{
-                                'sort_no': 12,
-                                'no': 1,
-                                'detail': {
-                                    '01': '',
-                                },
-                                'pic': './img/promotion-for-brand/12-eang-hoa-haw-cheer-20200903.jpg'
-                            }, {
-                                'sort_no': 1,
-                                'no': 1,
-                                'detail': {
-                                    '01': '',
-                                },
-                                'pic': './img/promotion-for-brand/13-eang-hoa-haw-cheer-20200903.jpg'
-                            }, {
-                                'sort_no': 1,
-                                'no': 1,
-                                'detail': {
-                                    '01': '',
-                                },
-                                'pic': './img/promotion-for-brand/14-eang-hoa-haw-cheer-20200903.jpg'
-                            }]
-                    }, {
-                        'sort_no': 13,
-                        'img': './img/logo-brand/logohotfried.jpg',
-                        'pic_pro': './img/promotion-for-brand/13HOTFRIEDbytheEmerald1992.jpg',
-                        'branch': {
-                            'lang_th': 'ฮอทฟรายด์ บาย ดิเอมเมอรัลด์ 1992',
-                        },
-                        dataPro:
-                            [{
-                                'sort_no': 13,
-                                'no': 1,
-                                'detail': {
-                                    '01': '',
-                                },
-                                'pic': './img/promotion-for-brand/13HOTFRIEDbytheEmerald1992.jpg'
-                            }]
-                    }, {
-                        'sort_no': 14,
-                        'img': './img/logo-brand/logo14.jpg',
-                        'pic_pro': './img/promotion-for-brand/11-All-Coco-20200903.jpg',
-                        'branch': {
-                            'lang_th': 'All COCO',
-                        },
-                        dataPro:
-                            [{
-                                'sort_no': 14,
-                                'no': 1,
-                                'detail': {
-                                    '02': '',
-                                },
-                                'pic': './img/promotion-for-brand/11-All-Coco-20200903.jpg'
-                            }, {
-                                'sort_no': 1,
-                                'no': 1,
-                                'detail': {
-                                    '01': '',
-                                },
-                                'pic': './img/promotion-for-brand/12-All-Coco-20200903.jpg'
-                            }]
-                    }, {
-                        'sort_no': 15,
-                        'img': './img/logo-brand/logoMr. Pramuan Misin Kanom Krok.jpg',
-                        'pic_pro': './img/promotion-for-brand/15Mr.Pramuan Misin Kanom Krok.jpg',
-                        'branch': {
-                            'lang_th': 'ขนมครกประมวล มีศิลป์',
-                        },
-                        dataPro:
-                            [{
-                                'sort_no': 15,
-                                'no': 1,
-                                'detail': {
-                                    '01': '',
-                                },
-                                'pic': './img/promotion-for-brand/15Mr.Pramuan Misin Kanom Krok.jpg'
-                            }]
-                    }, {
-                        'sort_no': 16,
-                        'img': './img/logo-brand/logo16.jpg',
-                        'pic_pro': './img/promotion-for-brand/16-lamai-hoi-tod-yaowarat-20200903.jpg',
-                        'branch': {
-                            'lang_th': 'ละมัย หอยทอดเยาวราช',
-                        },
-                        dataPro:
-                            [{
-                                'sort_no': 16,
-                                'no': 1,
-                                'detail': {
-                                    '01': '',
-                                },
-                                'pic': './img/promotion-for-brand/16-lamai-hoi-tod-yaowarat-20200903.jpg'
-                            }, {
-                                'sort_no': 1,
-                                'no': 1,
-                                'detail': {
-                                    '01': '',
-                                },
-                                'pic': './img/promotion-for-brand/17-lamai-hoi-tod-yaowarat-20200903.jpg'
-                            }]
-                    }, {
-                        'sort_no': 17,
-                        'img': './img/logo-brand/logoqueen.jpg',
-                        'pic_pro': './img/promotion-for-brand/17QUEENOFKAPROW.jpg',
-                        'branch': {
-                            'lang_th': 'กะเพราหม่อมแม่',
-                        },
-                        dataPro:
-                            [{
-                                'sort_no': 17,
-                                'no': 1,
-                                'detail': {
-                                    '01': '',
-                                },
-                                'pic': './img/promotion-for-brand/17QUEENOFKAPROW.jpg'
-                            }, {
-                                'sort_no': 1,
-                                'no': 1,
-                                'detail': {
-                                    '01': '',
-                                },
-                                'pic': './img/promotion-for-brand/18QUEENOFKAPROW.jpg'
-                            }, {
-                                'sort_no': 1,
-                                'no': 1,
-                                'detail': {
-                                    '01': '',
-                                },
-                                'pic': './img/promotion-for-brand/19QUEENOFKAPROW.jpg'
-                            }, {
-                                'sort_no': 1,
-                                'no': 1,
-                                'detail': {
-                                    '01': '',
-                                },
-                                'pic': './img/promotion-for-brand/20QUEENOFKAPROW.jpg'
-                            }]
-                    }, {
-                        'sort_no': 18,
-                        'img': './img/logo-brand/logo18.jpg',
-                        'pic_pro': './img/promotion-for-brand/18-jec-meng-chicken-rice-two-color-20200903.jpg',
-                        'branch': {
-                            'lang_th': 'เจ็กเม้งข้าวมันไก่สองสี',
-                        },
-                        dataPro:
-                            [{
-                                'sort_no': 18,
-                                'no': 1,
-                                'detail': {
-                                    '01': '',
-                                },
-                                'pic': './img/promotion-for-brand/18-jec-meng-chicken-rice-two-color-20200903.jpg'
-                            }]
-                    }, {
-                        'sort_no': 19,
-                        'img': './img/logo-brand/logo19.jpg',
-                        'pic_pro': './img/promotion-for-brand/19-sawang-noodle-shop-20200903.jpg',
-                        'branch': {
-                            'lang_th': 'สว่างบะหมี่ก้ามปู',
-                        },
-                        dataPro:
-                            [{
-                                'sort_no': 19,
-                                'no': 1,
-                                'detail': {
-                                    '01': '',
-                                },
-                                'pic': './img/promotion-for-brand/19-sawang-noodle-shop-20200903.jpg'
-                            }]
-                    }, {
-                        'sort_no': 20,
-                        'img': './img/logo-brand/logo20.jpg',
-                        'pic_pro': './img/promotion-for-brand/20-threerachai-kai-yang-20200903.jpg',
-                        'branch': {
-                            'lang_th': 'ธีรชัยไก่ย่าง',
-                        },
-                        dataPro:
-                            [{
-                                'sort_no': 20,
-                                'no': 1,
-                                'detail': {
-                                    '01': '',
-                                },
-                                'pic': './img/promotion-for-brand/20-threerachai-kai-yang-20200903.jpg'
-                            }]
-                    }, {
-                        'sort_no': 21,
-                        'img': './img/logo-brand/logo21.jpg',
-                        'pic_pro': './img/promotion-for-brand/21KanomBuengMaePrapa.jpg',
-                        'branch': {
-                            'lang_th': 'ขนมเบื้องแม่ประภา',
-                        },
-                        dataPro:
-                            [{
-                                'sort_no': 21,
-                                'no': 1,
-                                'detail': {
-                                    '01': ''
-                                },
-                                'pic': './img/promotion-for-brand/21KanomBuengMaePrapa.jpg'
-                            }]
-                    }, {
-                        'sort_no': 22,
-                        'img': './img/logo-brand/logo22.jpg',
-                        'pic_pro': './img/promotion-for-brand/22YAOWARATTASTYTOASTEDBUN.jpg',
-                        'branch': {
-                            'lang_th': 'ขนมปังเจ้าอร่อยเด็ดเยาวราช',
-                        },
-                        dataPro:
-                            [{
-                                'sort_no': 23,
-                                'no': 23,
-                                'detail': {
-                                    '01': '',
-                                },
-                                'pic': './img/promotion-for-brand/22YAOWARATTASTYTOASTEDBUN.jpg'
-                            }]
-                    }, {
-                        'sort_no': 23,
-                        'img': './img/logo-brand/logotokyobean.jpg',
-                        'pic_pro': './img/promotion-for-brand/23TOKYOBEAN.jpg',
-                        'branch': {
-                            'lang_th': 'โตเกียว บีน',
-                        },
-                        dataPro:
-                            [{
-                                'sort_no': 23,
-                                'no': 1,
-                                'detail': {
-                                    '01': ''
-                                },
-                                'pic': './img/promotion-for-brand/23TOKYOBEAN.jpg'
-                            }]
-                    }, {
-                        'sort_no': 24,
-                        'img': './img/logo-brand/logoyakun.jpg',
-                        'pic_pro': './img/promotion-for-brand/25YAKUNKAYATOAST.jpg',
-                        'branch': {
-                            'lang_th': 'ยาคุน คายา โทสต์',
-                        },
-                        dataPro:
-                            [{
-                                'sort_no': 24,
-                                'no': 1,
-                                'detail': {
-                                    '01': ''
-                                },
-                                'pic': './img/promotion-for-brand/25YAKUNKAYATOAST.jpg'
-                            }]
-                    }, {
-                        'sort_no': 25,
-                        'img': './img/logo-brand/logoxiao.jpg',
-                        'pic_pro': './img/promotion-for-brand/25XiaoSiChuan.jpg',
-                        'branch': {
-                            'lang_th': 'เสี่ยวเสฉวน',
-                        },
-                        dataPro:
-                            [{
-                                'sort_no': 25,
-                                'no': 1,
-                                'detail': {
-                                    '01': ''
-                                },
-                                'pic': './img/promotion-for-brand/25XiaoSiChuan.jpg'
-                            }]
-                    }, {
-                        'sort_no': 26,
-                        'img': './img/logo-brand/logo-kuychay-loa-hao-jeay-20200804-20.jpg',
-                        'pic_pro': './img/promotion-for-brand/26GuiChaibyJe Noi.jpg',
-                        'branch': {
-                            'lang_th': 'กุยช่ายเหล่าหอเจี๊ยะ by เจ้น้อย',
-                        },
-                        dataPro:
-                            [{
-                                'sort_no': 26,
-                                'no': 1,
-                                'detail': {
-                                    '01': ''
-                                },
-                                'pic': './img/promotion-for-brand/26GuiChaibyJe Noi.jpg'
-                            }]
-                    }, {
-                        'sort_no': 27,
-                        'img': './img/logo-brand/logo-ayao-gourment-20.jpg',
-                        'pic_pro': './img/promotion-for-brand/29AYAO.jpg',
-                        'branch': {
-                            'lang_th': 'อาหยาว',
-                        },
-                        dataPro:
-                            [{
-                                'sort_no': 27,
-                                'no': 1,
-                                'detail': {
-                                    '01': ''
-                                },
-                                'pic': './img/promotion-for-brand/29AYAO.jpg'
-                            }]
-                    }, {
-                        'sort_no': 28,
-                        'img': './img/logo-brand/logotidlom.jpg',
-                        'pic_pro': './img/promotion-for-brand/30TIDLOM MHOOTOD.jpg',
-                        'branch': {
-                            'lang_th': 'ติดลมหมูทอด ปลาร้า',
-                        },
-                        dataPro:
-                            [{
-                                'sort_no': 28,
-                                'no': 1,
-                                'detail': {
-                                    '01': ''
-                                },
-                                'pic': './img/promotion-for-brand/30TIDLOM MHOOTOD.jpg'
-                            }]
-                    }, {
-                        'sort_no': 29,
-                        'img': './img/logo-brand/logogrilledsquid.jpg',
-                        'pic_pro': './img/promotion-for-brand/31GrilledSquidChinatownYaowarat.jpg',
-                        'branch': {
-                            'lang_th': 'หมึกย่างแดนมังกรเยาวราช',
-                        },
-                        dataPro:
-                            [{
-                                'sort_no': 29,
-                                'no': 1,
-                                'detail': {
-                                    '01': ''
-                                },
-                                'pic': './img/promotion-for-brand/31GrilledSquidChinatownYaowarat.jpg'
-                            }]
-                    }, {
-                        'sort_no': 30,
-                        'img': './img/logo-brand/logo-Legend-Grilled-Pork-20200804-20.jpg',
-                        'pic_pro': './img/promotion-for-brand/32LegendGrilledPork.jpg',
-                        'branch': {
-                            'lang_th': 'รีเจ้นท์กริลพอร์ค',
-                        },
-                        dataPro:
-                            [{
-                                'sort_no': 30,
-                                'no': 1,
-                                'detail': {
-                                    '01': ''
-                                },
-                                'pic': './img/promotion-for-brand/32LegendGrilledPork.jpg'
-                            }]
-                    }, {
-                        'sort_no': 31,
-                        'img': './img/logo-brand/a cup by ahnam.jpg',
-                        'pic_pro': './img/promotion-for-brand/31-a-cup-by-ahnam.jpg',
-                        'branch': {
-                            'lang_th': 'อะคัพ บาย อานัม',
-                        },
-                        dataPro:
-                            [{
-                                'sort_no': 31,
-                                'no': 1,
-                                'detail': {
-                                    '01': ''
-                                },
-                                'pic': './img/promotion-for-brand/31-a-cup-by-ahnam.jpg'
-                            }, {
-                                'sort_no': 1,
-                                'no': 1,
-                                'detail': {
-                                    '01': '',
-                                },
-                                'pic': './img/promotion-for-brand/32-a-cup-by-ahnam.jpg'
-                            }]
-                    }, {
-                        'sort_no': 32,
-                        'img': './img/logo-brand/logodrink.jpg',
-                        'pic_pro': './img/promotion-for-brand/32drink.jpg',
-                        'branch': {
-                            'lang_th': 'เครื่องดื่ม',
-                        },
-                        dataPro:
-                            [{
-                                'sort_no': 32,
-                                'no': 1,
-                                'detail': {
-                                    '01': ''
-                                },
-                                'pic': './img/promotion-for-brand/32drink.jpg'
-                            }, {
-                                'sort_no': 1,
-                                'no': 1,
-                                'detail': {
-                                    '01': '',
-                                },
-                                'pic': './img/promotion-for-brand/33drink.jpg'
-                            }, {
-                                'sort_no': 1,
-                                'no': 1,
-                                'detail': {
-                                    '01': '',
-                                },
-                                'pic': './img/promotion-for-brand/34drink.jpg'
-                            }, {
-                                'sort_no': 1,
-                                'no': 1,
-                                'detail': {
-                                    '01': '',
-                                },
-                                'pic': './img/promotion-for-brand/35drink.jpg'
-                            }, {
-                                'sort_no': 1,
-                                'no': 1,
-                                'detail': {
-                                    '01': '',
-                                },
-                                'pic': './img/promotion-for-brand/36drink.jpg'
-                            }]
-                    },
 
-                    ],
-                branch: [],
-                logo: ''
+                        ],
+                    branch: [],
+                    logo: ''
 
-            },
-            // mounted() {
-            //     // generate ids in exist data
-            //     let id = 1;
-            //     this.items = this.items.map(x => {
-            //         x.id = id++;
-            //         return x;
-            //     })
-            // },
-            // methods: {
-            //     itemClicked(id) {
-            //         // find product in items array
-            //         this.listMenu = this.items.find(x => x.id == id).dataPro;
-            //         this.showModal = true;
-            //         this.branch = this.items.find(x => x.id == id).branch;
-            //         this.logo = this.items.find(x => x.id == id).img;
-            //         $("#exampleModalScrollable").modal('show');
-            //     },
-            //     onModalClose() {
-            //         $("#exampleModalScrollable").modal('hide');
-            //         this.showModal = false;
-            //         this.listMenu = []; // clear list menu in modal
-            //     }
+                },
+                // mounted() {
+                //     // generate ids in exist data
+                //     let id = 1;
+                //     this.items = this.items.map(x => {
+                //         x.id = id++;
+                //         return x;
+                //     })
+                // },
+                // methods: {
+                //     itemClicked(id) {
+                //         // find product in items array
+                //         this.listMenu = this.items.find(x => x.id == id).dataPro;
+                //         this.showModal = true;
+                //         this.branch = this.items.find(x => x.id == id).branch;
+                //         this.logo = this.items.find(x => x.id == id).img;
+                //         $("#exampleModalScrollable").modal('show');
+                //     },
+                //     onModalClose() {
+                //         $("#exampleModalScrollable").modal('hide');
+                //         this.showModal = false;
+                //         this.listMenu = []; // clear list menu in modal
+                //     }
 
-            // }
-        });
-    </script>
-};
+                // }
+            });
+        </script>
+    };
