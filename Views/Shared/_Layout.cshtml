@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+   
+    <main role="main" id="app">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-fixed-top">
+            <div class="navbar-header">
+                @Html.ActionLink("Promotion Note", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Show", "Index", "Show", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+        </nav>
+        <div class="container body-content">
+            @RenderBody()
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

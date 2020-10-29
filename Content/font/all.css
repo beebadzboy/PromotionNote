@@ -1,0 +1,135 @@
+/*
+Name: 			theme.css
+Written by: 	Okler Themes - (http://www.okler.net)
+Version: 		4.5.1
+*/
+
+@font-face {
+    font-family: "KingPowerHeadline-Black";
+    src: url('KingPowerHeadline/KingPowerHeadline-Black.eot');
+    src: url("KingPowerHeadline/KingPowerHeadline-Black.woff2") format("woff2"),
+        url("KingPowerHeadline/KingPowerHeadline-Black.woff") format("woff"),
+        url("KingPowerHeadline/KingPowerHeadline-Black.ttf") format("truetype"),
+        url("KingPowerHeadline/KingPowerHeadline-Black.otf") format("opentype"),
+        url("KingPowerHeadline/KingPowerHeadline-Black.eot?#iefix") format("embedded-opentype");
+}
+
+@font-face {
+    font-family: "KingPowerHeadline-Bold";
+    src: url('KingPowerHeadline/KingPowerHeadline-Bold.eot');
+    src: url("KingPowerHeadline/KingPowerHeadline-Bold.woff2") format("woff2"),
+        url("KingPowerHeadline/KingPowerHeadline-Bold.woff") format("woff"),
+        url("KingPowerHeadline/KingPowerHeadline-Bold.ttf") format("truetype"),
+        url("KingPowerHeadline/KingPowerHeadline-Bold.otf") format("opentype"),
+        url("KingPowerHeadline/KingPowerHeadline-Bold.eot?#iefix") format("embedded-opentype");
+}
+
+@font-face {
+    font-family: "KingPowerHeadline-Light";
+    src: url('KingPowerHeadline/KingPowerHeadline-Light.eot');
+    src: url("KingPowerHeadline/KingPowerHeadline-Light.woff2") format("woff2"),
+        url("KingPowerHeadline/KingPowerHeadline-Light.woff") format("woff"),
+        url("KingPowerHeadline/KingPowerHeadline-Light.ttf") format("truetype"),
+        url("KingPowerHeadline/KingPowerHeadline-Light.otf") format("opentype"),
+        url("KingPowerHeadline/KingPowerHeadline-Light.eot?#iefix") format("embedded-opentype");
+}
+
+@font-face {
+    font-family: "KingPowerHeadline-Medium";
+    src: url('KingPowerHeadline/KingPowerHeadline-Medium.eot');
+    src: url("KingPowerHeadline/KingPowerHeadline-Medium.woff2") format("woff2"),
+        url("KingPowerHeadline/KingPowerHeadline-Medium.woff") format("woff"),
+        url("KingPowerHeadline/KingPowerHeadline-Medium.ttf") format("truetype"),
+        url("KingPowerHeadline/KingPowerHeadline-Medium.otf") format("opentype"),
+        url("KingPowerHeadline/KingPowerHeadline-Medium.eot?#iefix") format("embedded-opentype");
+}
+
+@font-face {
+    font-family: "KingPowerHeadline-Regular";
+    src: url('KingPowerHeadline/KingPowerHeadline-Regular.eot');
+    src: url("KingPowerHeadline/KingPowerHeadline-Regular.woff2") format("woff2"),
+        url("KingPowerHeadline/KingPowerHeadline-Regular.woff") format("woff"),
+        url("KingPowerHeadline/KingPowerHeadline-Regular.ttf") format("truetype"),
+        url("KingPowerHeadline/KingPowerHeadline-Regular.otf") format("opentype"),
+        url("KingPowerHeadline/KingPowerHeadline-Regular.eot?#iefix") format("embedded-opentype");
+}
+
+/*KingPowerText*/
+@font-face {
+    font-family: "KingPowerText-Bold";
+    src: url('KingPowerText2/KingPowerText-Bold.eot');
+    src: url("KingPowerText2/KingPowerText-Bold.woff2") format("woff2"),
+        url("KingPowerText2/KingPowerText-Bold.woff") format("woff"),
+        url("KingPowerText2/KingPowerText-Bold.ttf") format("truetype"),
+        url("KingPowerText2/KingPowerText-Bold.otf") format("opentype"),
+        url("KingPowerText2/KingPowerText-Bold.eot?#iefix") format("embedded-opentype");
+}
+
+@font-face {
+    font-family: "KingPowerText-Light";
+    src: url('KingPowerText2/KingPowerText-Light.eot');
+    src: url("KingPowerText2/KingPowerText-Light.woff2") format("woff2"),
+        url("KingPowerText2/KingPowerText-Light.woff") format("woff"),
+        url("KingPowerText2/KingPowerText-Light.ttf") format("truetype"),
+        url("KingPowerText2/KingPowerText-Light.otf") format("opentype"),
+        url("KingPowerText2/KingPowerText-Light.eot?#iefix") format("embedded-opentype");
+}
+
+@font-face {
+    font-family: "KingPowerText-Regular";
+    src: url("KingPowerText2/KingPowerText-Regular.eot");
+    src: url("KingPowerText2/KingPowerText-Regular.woff2") format("woff2"),
+        url("KingPowerText2/KingPowerText-Regular.woff") format("woff"),
+        url("KingPowerText2/KingPowerText-Regular.ttf") format("truetype"),
+        url("KingPowerText2/KingPowerText-Regular.otf") format("opentype"),
+        url("KingPowerText2/KingPowerText-Regular.eot?#iefix") format("embedded-opentype");
+}
+
+/*end KingPowerText*/
+/*class use*/
+.kphbl {
+    font-family: KingPowerHeadline-Black;
+}
+
+.kphb {
+    font-family: KingPowerHeadline-Bold;
+}
+
+.kphl {
+    font-family: KingPowerHeadline-Light;
+}
+
+.kphm {
+    font-family: KingPowerHeadline-Medium;
+}
+
+.kphr {
+    font-family: KingPowerHeadline-Regular;
+}
+
+.kptb {
+    font-family: KingPowerText-Bold;
+}
+
+.kptl {
+    font-family: KingPowerText-Light;
+}
+
+.kptr {
+    font-family: KingPowerText-Regular;
+}
+
+/*end class use*/
+
+/* CI KINGPOWER*/
+
+/* KP-BLUE-2020 
+font*/
+
+.KP-BLUE-2020-font {
+    color: #034EA2;
+}
+
+.font16 {
+    font-size: 1em;
+}
