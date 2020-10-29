@@ -8,6 +8,13 @@ namespace WebApplication.Controllers
 {
     public class HomeController : Controller
     {
+        public ActionResult Login()
+        {
+            ViewBag.Title = "Login";
+
+            return View();
+        }
+
         public ActionResult Index()
         {
             ViewBag.Title = "Promotion Page";
