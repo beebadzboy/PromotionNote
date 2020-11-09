@@ -6,6 +6,9 @@
     <edmx:Diagrams>
       <Diagram DiagramId="c1ced3d78f6949a18b5a26be971f4723" Name="Diagram1">
         <EntityTypeShape EntityType="PromoNoteModel.user_auth" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PromoNoteModel.promo_note_detail" Width="1.5" PointX="4.5" PointY="0.75" />
+        <EntityTypeShape EntityType="PromoNoteModel.promo_note_header" Width="1.5" PointX="2.625" PointY="0.75" />
+        <AssociationConnector Association="PromoNoteModel.FK_promo_note_detail_promo_note_header" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -4,7 +4,29 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="PromoNoteModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="PromoNoteModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="promo_note_detail">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="header_id" Type="bigint" Nullable="false" />
+          <Property Name="row_number" Type="int" Nullable="false" />
+          <Property Name="promo_file" Type="image" Nullable="false" />
+          <Property Name="modified_by" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="modified_date" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="promo_note_header">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="title" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="thumbnail" Type="image" Nullable="false" />
+          <Property Name="description" Type="text" />
+          <Property Name="modified_by" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="modified_date" Type="datetime" Nullable="false" />
+        </EntityType>
         <EntityType Name="user_auth">
           <Key>
             <PropertyRef Name="id" />
@@ -15,11 +37,28 @@
           <Property Name="fullname" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="tel" Type="nchar" MaxLength="20" Nullable="false" />
         </EntityType>
+        <Association Name="FK_promo_note_detail_promo_note_header">
+          <End Role="promo_note_header" Type="Self.promo_note_header" Multiplicity="1" />
+          <End Role="promo_note_detail" Type="Self.promo_note_detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="promo_note_header">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="promo_note_detail">
+              <PropertyRef Name="header_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="PromoNoteModelStoreContainer">
+          <EntitySet Name="promo_note_detail" EntityType="Self.promo_note_detail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="promo_note_header" EntityType="Self.promo_note_header" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="user_auth" EntityType="Self.user_auth" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_promo_note_detail_promo_note_header" Association="Self.FK_promo_note_detail_promo_note_header">
+            <End Role="promo_note_header" EntitySet="promo_note_header" />
+            <End Role="promo_note_detail" EntitySet="promo_note_detail" />
+          </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="PromoNoteModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -35,7 +74,49 @@
         </EntityType>
         <EntityContainer Name="PromoNoteEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="user_auth" EntityType="Self.user_auth" />
+          <EntitySet Name="promo_note_detail" EntityType="PromoNoteModel.promo_note_detail" />
+          <EntitySet Name="promo_note_header" EntityType="PromoNoteModel.promo_note_header" />
+          <AssociationSet Name="FK_promo_note_detail_promo_note_header" Association="PromoNoteModel.FK_promo_note_detail_promo_note_header">
+            <End Role="promo_note_header" EntitySet="promo_note_header" />
+            <End Role="promo_note_detail" EntitySet="promo_note_detail" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="promo_note_detail">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="header_id" Type="Int64" Nullable="false" />
+          <Property Name="row_number" Type="Int32" Nullable="false" />
+          <Property Name="promo_file" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="modified_by" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="modified_date" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="promo_note_header" Relationship="PromoNoteModel.FK_promo_note_detail_promo_note_header" FromRole="promo_note_detail" ToRole="promo_note_header" />
+        </EntityType>
+        <EntityType Name="promo_note_header">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="thumbnail" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="modified_by" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="modified_date" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="promo_note_detail" Relationship="PromoNoteModel.FK_promo_note_detail_promo_note_header" FromRole="promo_note_header" ToRole="promo_note_detail" />
+        </EntityType>
+        <Association Name="FK_promo_note_detail_promo_note_header">
+          <End Type="PromoNoteModel.promo_note_header" Role="promo_note_header" Multiplicity="1" />
+          <End Type="PromoNoteModel.promo_note_detail" Role="promo_note_detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="promo_note_header">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="promo_note_detail">
+              <PropertyRef Name="header_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -50,6 +131,30 @@
                 <ScalarProperty Name="password" ColumnName="password" />
                 <ScalarProperty Name="fullname" ColumnName="fullname" />
                 <ScalarProperty Name="tel" ColumnName="tel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="promo_note_detail">
+            <EntityTypeMapping TypeName="PromoNoteModel.promo_note_detail">
+              <MappingFragment StoreEntitySet="promo_note_detail">
+                <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+                <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+                <ScalarProperty Name="promo_file" ColumnName="promo_file" />
+                <ScalarProperty Name="row_number" ColumnName="row_number" />
+                <ScalarProperty Name="header_id" ColumnName="header_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="promo_note_header">
+            <EntityTypeMapping TypeName="PromoNoteModel.promo_note_header">
+              <MappingFragment StoreEntitySet="promo_note_header">
+                <ScalarProperty Name="modified_date" ColumnName="modified_date" />
+                <ScalarProperty Name="modified_by" ColumnName="modified_by" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="thumbnail" ColumnName="thumbnail" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
