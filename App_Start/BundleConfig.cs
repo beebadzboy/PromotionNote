@@ -23,6 +23,10 @@ namespace WebApplication
                       "~/Content/bootstrap.css",
                       "~/Content/font-awesome.css",
                       "~/Content/site.css"));
+            bundles.Add(new StyleBundle("~/Content/fontawesome2").Include(
+                      "~/fontawesome2/all.css",
+                      "~/fontawesome2/font-awesome.css",
+                      "~/fontawesome2/all.js"));
         }
     }
 }

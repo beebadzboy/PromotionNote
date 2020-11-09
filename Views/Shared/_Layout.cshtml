@@ -9,12 +9,12 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-   
+
     <main role="main" id="app">
         <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-fixed-top">
             <div class="container-fluid navbar-header">
-               @Html.ActionLink("Admin [Esc]", "Index", "Home", new { area = "" }, new { @class = "navbar-brand col-10 " })
-               @Html.ActionLink("Show Room [Home]", "Index", "Show", new { area = "" }, new { @class = "navbar-brand col-2 text-right" })
+                @Html.ActionLink("Admin [Esc]", "Index", "Home", new { area = "" }, new { @class = "navbar-brand col-10 " })
+                @Html.ActionLink("Show Room [Home]", "Index", "Show", new { area = "" }, new { @class = "navbar-brand col-2 text-right" })
             </div>
         </nav>
         <div class="container-fluid body-content">
@@ -25,6 +25,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/fontawesome2")
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     @RenderSection("scripts", required: false)
     <script>
