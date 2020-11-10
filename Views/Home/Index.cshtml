@@ -1,7 +1,7 @@
 ﻿<div class="row mb-3 mt-3">
     <div class="col-2">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
-            <i class="fas fa-plus">Add Promotion</i>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-or-edit-promotion">
+            <i class="fas fa-plus"></i>Add Promotion
         </button>
     </div>
     <div class="offset-7 col-3 input-group">
@@ -12,7 +12,7 @@
     </div>
 </div>
 <div class="row mb-3 mt-3">
-    <div class="col-6 col-sm-4 themed-grid-col mb-3" v-for="(item,index) in items" :key="item.sort_no">
+    <div class="col-6 col-sm-4 themed-grid-col mb-3" v-for="(item,index) in items" :key="item.sort_no" v-on:click="itemClicked(item.id)">
         <div class="card">
             <!-- <img class="card-img-top" :src="item.pic_pro" alt=''> -->
             <div class="card-body">
@@ -23,29 +23,71 @@
                     <rect width="100%" height="100%" fill="#868e96"></rect>
                     <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
                 </svg>
-                <a href="./home/edit"><button type="button" class="btn-sm btn-warning mt-2">edit</button></a>
-                <a href="./home/edit"><button type="button" class="btn-sm btn-danger mt-2">delete</button></a>
+                <button type="button" 
+                        class="btn-sm btn-warning mt-2"
+                        data-toggle="modal" 
+                        data-target="#add-or-edit-promotion">Edit</button>
+                <button type="button" 
+                        class="btn-sm btn-danger mt-2 " 
+                        data-toggle="modal" 
+                        data-target="#action-delete">Delete</button>
             </div>
         </div>
     </div>
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
+<div class="modal fade" id="add-or-edit-promotion" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
         <div class="modal-content">
-            <div class="modal-header"> 
+            <div class="modal-header">
                 <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                ...
+                <form>
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Name Promotion:</label>
+                        <input type="text" class="form-control" id="recipient-name">
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Detail:</label>
+                        <textarea class="form-control" id="message-text"></textarea>
+                    </div>
+                    <div class="input-group is-invalid">
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="validatedInputGroupCustomFile" required>
+                            <label class="custom-file-label" for="validatedInputGroupCustomFile">Choose file for present ppx</label>
+                        </div>
+                        
+                    </div>
+                </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Understood</button>
+                <button type="button" class="btn btn-primary">SAVE</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="action-delete" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Are you need delete this promotion ?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="detail-message"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger">Delete</button>
             </div>
         </div>
     </div>
@@ -745,30 +787,30 @@
                 logo: ''
 
             },
-            // mounted() {
-            //     // generate ids in exist data
-            //     let id = 1;
-            //     this.items = this.items.map(x => {
-            //         x.id = id++;
-            //         return x;
-            //     })
-            // },
-            // methods: {
-            //     itemClicked(id) {
-            //         // find product in items array
-            //         this.listMenu = this.items.find(x => x.id == id).dataPro;
-            //         this.showModal = true;
-            //         this.branch = this.items.find(x => x.id == id).branch;
-            //         this.logo = this.items.find(x => x.id == id).img;
-            //         $("#exampleModalScrollable").modal('show');
-            //     },
-            //     onModalClose() {
-            //         $("#exampleModalScrollable").modal('hide');
-            //         this.showModal = false;
-            //         this.listMenu = []; // clear list menu in modal
-            //     }
+            mounted() {
+                // generate ids in exist data
+                let id = 1;
+                this.items = this.items.map(x => {
+                    x.id = id++;
+                    return x;
+                })
+            },
+            methods: {
+                itemClicked(id) {
+                    // find product in items array
+                    this.listMenu = this.items.find(x => x.id == id).dataPro;
+                    this.showModal = true;
+                    this.branch = this.items.find(x => x.id == id).branch;
+                    this.logo = this.items.find(x => x.id == id).img;
+                    $("#exampleModalScrollable").modal('show');
+                },
+                onModalClose() {
+                    $("#exampleModalScrollable").modal('hide');
+                    this.showModal = false;
+                    this.listMenu = []; // clear list menu in modal
+                }
 
-            // }
+            }
         });
     </script>
 };

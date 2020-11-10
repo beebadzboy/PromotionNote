@@ -127,9 +127,45 @@ Version: 		4.5.1
 font*/
 
 .KP-BLUE-2020-font {
-    color: #034EA2;
+    color: #0B56A4;
+}
+.KP-TEAL-font {
+    color: #00ADBB;
+}
+.gay231F20-font {
+    color: #231F20;
+}
+.kp-metallic-gold-font {
+    color: #9F8A58;
+}
+.kp-white{
+    color:#ffffff !important;
+}
+.b-shadow {
+    box-shadow: 0 0 8px 4px #ccc;
 }
 
+/*bg*/
+.KP-BLUE-2020-bg {
+    background-color: #0B56A4;
+}
+
+.KP-TEAL-bg {
+    background-color: #00ADBB;
+}
+
+.gay231F20-bg {
+    background-color: #231F20;
+}
+
+.kp-metallic-gold-bg {
+    background-color: #9F8A58;
+}
+.kp-diagonal-gradient-1 {
+    background: linear-gradient(270.01deg, #00AAB5 0%, #0B56A4 62%); 
+}
+
+/*size*/
 .font16 {
     font-size: 1em;
 }
