@@ -1,6 +1,6 @@
 ﻿<div class="row mb-3 mt-3">
     <div class="col-2">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-or-edit-promotion">
+        <button type="button" class="btn btn-primary" data-toggle="modal" v-on:click="onPromotionAdd()">
             <i class="fas fa-plus"></i>Add Promotion
         </button>
     </div>
@@ -25,13 +25,12 @@
                 </svg>
                 <button type="button"
                         class="btn-sm btn-warning mt-2"
-                        v-on:click="itemClicked(item.id)">
+                        v-on:click="onPromotionEdit(item.id)">
                     Edit
                 </button>
                 <button type="button"
-                        class="btn-sm btn-danger mt-2 "
-                        data-toggle="modal"
-                        data-target="#action-delete">
+                        class="btn-sm btn-danger mt-2"
+                        v-on:click="onPromotionDelete(item.id)">
                     Delete
                 </button>
             </div>
@@ -40,7 +39,43 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="add-or-edit-promotion" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="add-promotion" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="new-pro-name" class="col-form-label">Name Promotion:</label>
+                        <input type="text" class="form-control" id="new-pro-name">
+                    </div>
+                    <div class="form-group">
+                        <label for="new-pro-detail" class="col-form-label">Detail:</label>
+                        <textarea class="form-control" id="new-pro-detail"></textarea>
+                    </div>
+                    <div class="input-group is-invalid">
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="new-pro-file" required>
+                            <label class="custom-file-label" for="new-pro-file">Choose file for present ppx</label>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" v-on:click="savePromotion()">SAVE</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="edit-promotion" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
@@ -70,13 +105,13 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">SAVE</button>
+                <button type="button" class="btn btn-primary" v-on:click="updatePromotion(promotionId)">SAVE</button>
             </div>
         </div>
     </div>
 </div>
 
-<div class="modal fade" id="action-delete" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="delete-promotion" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
@@ -86,11 +121,13 @@
                 </button>
             </div>
             <div class="modal-body">
-                <div class="detail-message"></div>
+                <div class="detail-message">
+                    {{branch.lang_th}}
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-danger">Delete</button>
+                <button type="button" class="btn btn-danger" v-on:click="deletePromotion(promotionId)">Delete</button>
             </div>
         </div>
     </div>
@@ -799,20 +836,42 @@
                 })
             },
             methods: {
-                itemClicked(id) {
-                    // find product in items array
-                    this.listMenu = this.items.find(x => x.id == id).dataPro;
-                    this.showModal = true;
-                    this.branch = this.items.find(x => x.id == id).branch;
-                    this.logo = this.items.find(x => x.id == id).img;
-                    $("#add-or-edit-promotion").modal('show');
+                onPromotionAdd() {
+                    $("#add-promotion").modal('show');
                 },
-                onModalClose() {
-                    $("#add-or-edit-promotion").modal('hide');
-                    this.showModal = false;
-                    this.listMenu = []; // clear list menu in modal
-                }
+                savePromotion(id) {
+                    $("#add-promotion").modal('hide');
+                },
+                onPromotionEdit(id) {
+                    // find product in items array
+                    //this.listMenu = this.items.find(x => x.id == id).dataPro;
+                    //this.showModal = true;
+                    //this.branch = this.items.find(x => x.id == id).branch;
+                    //this.logo = this.items.find(x => x.id == id).img;
+                    $("#edit-promotion").modal('show');
+                },
+                updatePromotion(id) {
+                    // find product in items array
+                    //this.listMenu = this.items.find(x => x.id == id).dataPro;
+                    //this.showModal = true;
+                    //this.branch = this.items.find(x => x.id == id).branch;
+                    //this.logo = this.items.find(x => x.id == id).img;
+                    $("#edit-promotion").modal('hide');
+                },
+                onPromotionDelete(id) {
+                    this.branch = this.items.find(x => x.id == id).branch;
+                    this.promotionId = id;
+                    $("#delete-promotion").modal('show');
+                },
+                deletePromotion(id) {
+                    // find product in items array
+                    //this.listMenu = this.items.find(x => x.id == id).dataPro;
+                    //this.branch = this.items.find(x => x.id == id).branch;
+                    //this.logo = this.items.find(x => x.id == id).img;
+                    //this.showModal = false;
+                    $("#delete-promotion").modal('hide');
 
+                }
             }
         });
     </script>
