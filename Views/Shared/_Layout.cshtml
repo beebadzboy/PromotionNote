@@ -7,14 +7,15 @@
     @Styles.Render("~/Content/css")
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/Content/font/fontawesome2")
 </head>
-<body>
-   
+<body class="kphbl">
+
     <main role="main" id="app">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-fixed-top">
+        <nav class="navbar kp-diagonal-gradient-1 b-shadow navbar-expand-lg navbar-light bg-light navbar-fixed-top">
             <div class="container-fluid navbar-header">
-               @Html.ActionLink("Admin [Esc]", "Index", "Home", new { area = "" }, new { @class = "navbar-brand col-10 " })
-               @Html.ActionLink("Show Room [Home]", "Index", "Show", new { area = "" }, new { @class = "navbar-brand col-2 text-right" })
+                @Html.ActionLink("Admin [Esc]", "Index", "Home", new { area = "" }, new { @class = "navbar-brand col-10 kp-white " })
+                @Html.ActionLink("Show Room [Home]", "Index", "Show", new { area = "" }, new { @class = "navbar-brand col-2 text-right kp-white" })
             </div>
         </nav>
         <div class="container-fluid body-content">
