@@ -156,12 +156,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PromoModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="DBModels\promo_note_detail.cs">
-      <DependentUpon>PromoModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBModels\promo_note_header.cs">
-      <DependentUpon>PromoModel.tt</DependentUpon>
-    </Compile>
+    <Compile Include="DBModels\promo_note_detail.cs" />
+    <Compile Include="DBModels\promo_note_header.cs" />
     <Compile Include="DBModels\user_auth.cs">
       <DependentUpon>PromoModel.tt</DependentUpon>
     </Compile>
